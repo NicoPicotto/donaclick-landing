@@ -1,21 +1,25 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource-variable/source-serif-4";
+import "@fontsource/m-plus-rounded-1c";
 
 const colors = {
   negro: "#0e1111",
   blanco: "#F5F7F8",
   azul: "#2E3192",
   naranja: "#FF7E00",
+  gris: "#606060",
   fondo: "#F5F7F8",
 };
 
 const fonts = {
-  body: `'Noto Sans TC Variable', sans-serif`,
-  heading: `'Paytone One', sans-serif`,
+  body: `'M PLUS Rounded 1c', sans-serif`,
+  heading: `'Source Serif 4 Variable', serif`,
 };
 
 const Button = {
   baseStyle: {
     fontWeight: "regular",
+    rounded: 10,
   },
   // Variaciones de estilos por prop `variant`
   variants: {
@@ -31,8 +35,8 @@ const Button = {
     outline: {
       border: "2px solid",
       width: "fit-content",
-      borderColor: colors.azul,
-      color: colors.azul,
+      borderColor: colors.blanco,
+      color: colors.blanco,
       _hover: {
         bg: colors.azul,
         color: colors.blanco,

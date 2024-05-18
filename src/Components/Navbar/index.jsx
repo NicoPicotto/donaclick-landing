@@ -24,7 +24,14 @@ const Navbar = () => {
   ];
 
   return (
-    <Stack bgColor='azul' align='center'>
+    <Stack
+      bgColor='azul'
+      align='center'
+      position='sticky'
+      top={0}
+      zIndex={10}
+      paddingInline='1em'
+    >
       <Stack
         align='center'
         justify='space-between'
@@ -32,12 +39,11 @@ const Navbar = () => {
         paddingBlock='15px'
         direction='row'
         w='100%'
-        paddingInline='1em'
       >
         <Image src='/assets/Navbar/logo.png' w='175px' alt='Logo DonaClick' />
         <HStack gap={10} display={{ base: "none", md: "flex" }}>
           {MenuButtons.map((item) => (
-            <Button key={item.link} variant='link'>
+            <Button key={item.link} variant='link' fontWeight='bolder'>
               {item.label}
             </Button>
           ))}
@@ -55,7 +61,7 @@ const Navbar = () => {
       <Drawer placement='right' size='full' onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton fontSize='1rem' p='2em' color="white" />
+          <DrawerCloseButton fontSize='1rem' p='2em' color='white' />
           <DrawerBody bgColor='azul'>
             <Stack h='100%' justify='center' align='center' gap='3em'>
               {MenuButtons.map((item) => (
@@ -65,6 +71,7 @@ const Navbar = () => {
                   fontSize='1.5em'
                   variant='link'
                   color='blanco'
+                  fontWeight='bolder'
                 >
                   {item.label}
                 </Button>
