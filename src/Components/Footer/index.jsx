@@ -1,9 +1,9 @@
 import { Stack, Button, Text } from "@chakra-ui/react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Stack bgColor='naranja' padding='1em' align='center'>
+    <Stack bgColor='naranja' padding='1em' align='center' id='contacto'>
       <Stack
         maxW='1200px'
         w='100%'
@@ -14,7 +14,7 @@ const Footer = () => {
         <Text fontSize='sm' color='blanco' fontWeight='bolder'>
           DonáClick Ⓡ
         </Text>
-        <Button as={Link} variant="link">
+        <Button as={Link} variant='link'>
           <Text fontSize='sm' color='blanco' fontWeight='bolder'>
             info@donaclick.com.ar
           </Text>

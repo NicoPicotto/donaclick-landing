@@ -40,7 +40,7 @@ const Ongs = () => {
   };
 
   return (
-    <Stack align='center' position='relative'>
+    <Stack align='center' position='relative' id='ongs'>
       <Divider
         borderColor='naranja'
         position='absolute'
@@ -106,7 +106,7 @@ const Ongs = () => {
       <Stack h='4em' bgColor='azul' w='100%' position='absolute' bottom='41em'>
         <Image />
       </Stack>
-      <Stack bgColor='azul' w='100%' align='center' pb="2em">
+      <Stack bgColor='azul' w='100%' align='center' pb='2em'>
         <Stack
           maxW='1200px'
           justify='center'
@@ -114,6 +114,7 @@ const Ongs = () => {
           h='600px'
           w='100%'
           position='relative'
+          id='numeros'
         >
           <Text color='white' fontSize='2xl' fontWeight='bold'>
             <Highlight query='donando' styles={{ color: "naranja" }}>

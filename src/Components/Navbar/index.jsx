@@ -20,7 +20,7 @@ const Navbar = () => {
   const MenuButtons = [
     { label: "¿De qué se trata?", link: "#about" },
     { label: "ONG's Asociadas", link: "#ongs" },
-    { label: "Transparencia", link: "#numeros" },
+    { label: "Resultados", link: "#numeros" },
     { label: "Contacto", link: "#contacto" },
   ];
 
