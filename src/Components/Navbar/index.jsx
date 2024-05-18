@@ -10,6 +10,7 @@ import {
   DrawerCloseButton,
   IconButton,
   HStack,
+  Link,
 } from "@chakra-ui/react";
 import { RiMenu3Line } from "react-icons/ri";
 
@@ -17,7 +18,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const MenuButtons = [
-    { label: "¿De qué se trata?", link: "#nosotros" },
+    { label: "¿De qué se trata?", link: "#about" },
     { label: "ONG's Asociadas", link: "#ongs" },
     { label: "Transparencia", link: "#numeros" },
     { label: "Contacto", link: "#contacto" },
@@ -40,10 +41,19 @@ const Navbar = () => {
         direction='row'
         w='100%'
       >
-        <Image src='/assets/Navbar/logo.png' w='175px' alt='Logo DonaClick' />
+        <Link as="a" href="#hero">
+          <Image src='/assets/Navbar/logo.png' w='175px' alt='Logo DonaClick' />
+        </Link>
+
         <HStack gap={10} display={{ base: "none", md: "flex" }}>
           {MenuButtons.map((item) => (
-            <Button key={item.link} variant='link' fontWeight='bolder'>
+            <Button
+              as='a'
+              href={item.link}
+              key={item.link}
+              variant='link'
+              fontWeight='bolder'
+            >
               {item.label}
             </Button>
           ))}

@@ -11,7 +11,7 @@ import {
 
 const About = () => {
   return (
-    <Stack align='center' paddingInline='1em'>
+    <Stack align='center' paddingInline='1em' id="about">
       <Stack
         paddingBlock='10em'
         maxW='1200px'
@@ -54,13 +54,12 @@ const About = () => {
         maxW='1200px'
         position='relative'
         w='100%'
-        marginBottom='10em'
+        marginBottom='5em'
         bgImage="url('assets/About/about-pic-2.png')"
         bgPosition='center'
         bgSize='cover'
         bgRepeat='no-repeat'
-        borderRadius='50px'
-        overflow='hidden'
+        borderRadius='60px'
         textAlign='center'
         h='600px'
       >
@@ -71,7 +70,24 @@ const About = () => {
           bgColor='rgba(0,0,0,0.5)'
           overflow='hidden'
           zIndex={1}
+          borderRadius='60px'
         ></Stack>
+        <Image
+          src='assets/About/smile.png'
+          position='absolute'
+          left="1em"
+          bottom='-3em'
+          w='100px'
+          zIndex={2}
+        />
+        <Image
+          src='assets/About/iso.png'
+          position='absolute'
+          right="2em"
+          top='-5em'
+          w='100px'
+          zIndex={2}
+        />
         <Stack
           align='center'
           zIndex={2}

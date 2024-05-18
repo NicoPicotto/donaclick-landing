@@ -67,6 +67,7 @@ const styles = {
       backgroundColor: colors.fondo,
       color: colors.negro,
       fontSize: "16px",
+      scrollBehavior: "smooth",
     },
   },
 };

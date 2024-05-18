@@ -2,7 +2,7 @@ import { Stack, AspectRatio } from "@chakra-ui/react";
 
 const Hero = () => {
   return (
-    <Stack>
+    <Stack id="hero">
       <AspectRatio ratio={16 / 9}>
         <iframe
           title='naruto'
