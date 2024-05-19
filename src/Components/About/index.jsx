@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import {
   Heading,
   Stack,
@@ -8,10 +9,36 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const highlightRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      highlightRef.current,
+      { width: "0%" },
+      {
+        width: "100%",
+        scrollTrigger: {
+          trigger: highlightRef.current,
+          start: "top 90%",
+          end: "bottom 50%",
+          scrub: 1,
+        },
+        duration: 1,
+        ease: "power2.out",
+        background: "#FF7E00",
+        immediateRender: false,
+      }
+    );
+  });
+
   return (
-    <Stack align='center' paddingInline='1em' id="about">
+    <Stack align='center' paddingInline='1em' id='about'>
       <Stack
         paddingBlock='10em'
         maxW='1200px'
@@ -47,7 +74,20 @@ const About = () => {
           >
             www.todoairelibre.com.ar
           </Link>{" "}
-          sin ningún costo extra.
+          <Box position='relative' display='inline-block'>
+            <Text as='span' ref={highlightRef} position='relative' zIndex={1}>
+              sin ningún costo extra.
+            </Text>
+            <Box
+              position='absolute'
+              bottom='0'
+              left='0'
+              height='2px'
+              width='0'
+              backgroundColor='#FF7E00'
+              ref={highlightRef}
+            />
+          </Box>
         </Heading>
       </Stack>
       <Box
@@ -75,7 +115,7 @@ const About = () => {
         <Image
           src='assets/About/smile.png'
           position='absolute'
-          left="1em"
+          left='1em'
           bottom='-3em'
           w='100px'
           zIndex={2}
@@ -83,7 +123,7 @@ const About = () => {
         <Image
           src='assets/About/iso.png'
           position='absolute'
-          right="2em"
+          right='2em'
           top='-5em'
           w='100px'
           zIndex={2}

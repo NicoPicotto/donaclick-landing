@@ -1,7 +1,7 @@
-import { Stack, Heading, Button, Text } from "@chakra-ui/react";
 import Hero from "../../Components/Hero";
 import About from "../../Components/About";
 import Ongs from "../../Components/Ongs";
+import Contact from "../../Components/Contact";
 
 const index = () => {
   return (
@@ -9,6 +9,7 @@ const index = () => {
       <Hero />
       <About />
       <Ongs />
+      <Contact />
     </>
   );
 };

@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Stack,
@@ -7,8 +7,10 @@ import {
   Text,
   Divider,
   Icon,
+  IconButton,
   Heading,
   Highlight,
+  Tag,
 } from "@chakra-ui/react";
 import dataOngs from "./ongs.json";
 import { MdRestaurant } from "react-icons/md";
@@ -16,6 +18,11 @@ import { GiSittingDog, GiSchoolBag } from "react-icons/gi";
 import { RiSurgicalMaskFill } from "react-icons/ri";
 import { BsCupHotFill } from "react-icons/bs";
 import { FaTruckMedical } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
+import { BiLogoInstagramAlt, BiWorld } from "react-icons/bi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // Import Swiper styles
 import "swiper/css";
@@ -26,8 +33,52 @@ import "./styles.css";
 
 // import required modules
 import { EffectFade, Navigation, Autoplay } from "swiper/modules";
+import Numeros from "../Numeros";
 
 const Ongs = () => {
+  const imageRefs = useRef([]);
+
+  const handleSlideChangeStart = (swiper) => {
+    const currentIndex = swiper.realIndex;
+    if (imageRefs.current[currentIndex]) {
+      gsap.fromTo(
+        imageRefs.current[currentIndex],
+        { rotateY: 0 },
+        { rotateY: 360, duration: 1 } // Ajusta la duración según sea necesario
+      );
+    }
+  };
+
+  const handleSlideChangeEnd = (swiper) => {
+    imageRefs.current.forEach((image) => {
+      if (image) {
+        gsap.set(image, { rotateY: 0 });
+      }
+    });
+  };
+
+  const counterRef = useRef(null);
+
+  useGSAP(() => {
+    const counter = { value: 0 };
+    gsap.to(counter, {
+      value: 1502026,
+      duration: 3,
+      ease: "power2.out",
+      onUpdate: () => {
+        counterRef.current.innerHTML = Math.floor(
+          counter.value
+        ).toLocaleString();
+      },
+      scrollTrigger: {
+        trigger: counterRef.current,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
   const iconMap = {
     MdRestaurant: MdRestaurant,
     GiSittingDog: GiSittingDog,
@@ -35,12 +86,20 @@ const Ongs = () => {
     RiSurgicalMaskFill: RiSurgicalMaskFill,
     BsCupHotFill: BsCupHotFill,
     FaTruckMedical: FaTruckMedical,
-
-    // Agrega más íconos según sea necesario
   };
 
   return (
     <Stack align='center' position='relative' id='ongs'>
+      <Image
+        src='assets/Ongs/hand-big.png'
+        position='absolute'
+        bottom={-20}
+        left={0}
+        w='50%'
+        zIndex={1}
+        opacity={0.05}
+        blendMode='difference'
+      />
       <Divider
         borderColor='naranja'
         position='absolute'
@@ -69,8 +128,10 @@ const Ongs = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
+          onSlideChangeTransitionStart={handleSlideChangeStart}
+          onSlideChangeTransitionEnd={handleSlideChangeEnd}
         >
-          {dataOngs.map((ong) => (
+          {dataOngs.map((ong, index) => (
             <SwiperSlide key={ong.slug}>
               <Stack
                 direction='row'
@@ -78,15 +139,58 @@ const Ongs = () => {
                 h='100%'
                 align='flex-start'
               >
-                <Image src={ong.corazon} w='400px' objectFit='contain' />
-                <Stack w='50%' gap={2}>
+                <Image
+                  ref={(el) => (imageRefs.current[index] = el)}
+                  src={ong.corazon}
+                  w='400px'
+                  objectFit='contain'
+                />
+                <Stack w='50%' gap={5}>
                   <Text color='azul' fontWeight={600} fontSize='4xl'>
                     {ong.label}
                   </Text>
-                  <Image w='200px' src={ong.path} />
-                  <Text color='gris' fontWeight={300}>
+                  <Image
+                    h='120px'
+                    maxW='200px'
+                    w='fit-content'
+                    objectFit='contain'
+                    src={ong.path}
+                  />
+                  <Text color='gris' fontWeight={300} textAlign='justify'>
                     {ong.description}
                   </Text>
+                  <Stack direction='row' gap={2}>
+                    {ong.web && (
+                      <IconButton
+                        p={0}
+                        fontSize={25}
+                        border='1.7px solid #FF7E00'
+                        size='sm'
+                        as='a'
+                        href={ong.web}
+                        target='_blank'
+                        bgColor='blanco'
+                        _hover={{ color: "blanco", bgColor: "naranja" }}
+                        icon={<BiWorld />}
+                        color='naranja'
+                      />
+                    )}
+                    {ong.ig && (
+                      <IconButton
+                        p={0}
+                        fontSize={25}
+                        border='1.7px solid #FF7E00'
+                        size='sm'
+                        as='a'
+                        href={ong.ig}
+                        target='_blank'
+                        bgColor='blanco'
+                        _hover={{ color: "blanco", bgColor: "naranja" }}
+                        icon={<BiLogoInstagramAlt />}
+                        color='naranja'
+                      />
+                    )}
+                  </Stack>
                 </Stack>
               </Stack>
               <Stack
@@ -103,10 +207,16 @@ const Ongs = () => {
           ))}
         </Swiper>
       </Stack>
-      <Stack h='4em' bgColor='azul' w='100%' position='absolute' bottom='41em'>
+      <Stack
+        h='4em'
+        bgColor='azul'
+        w='100%'
+        position='absolute'
+        bottom='38.5em'
+      >
         <Image />
       </Stack>
-      <Stack bgColor='azul' w='100%' align='center' pb='2em'>
+      <Stack bgColor='azul' w='100%' align='center' pb='2em' id='numeros'>
         <Stack
           maxW='1200px'
           justify='center'
@@ -114,21 +224,27 @@ const Ongs = () => {
           h='600px'
           w='100%'
           position='relative'
-          id='numeros'
         >
           <Text color='white' fontSize='2xl' fontWeight='bold'>
             <Highlight query='donando' styles={{ color: "naranja" }}>
               Llevamos donando
             </Highlight>
           </Text>
-          <Heading as='h3' fontSize='7em' color='white' fontWeight={500}>
-            $1.502.026,65
-          </Heading>
-        </Stack>
-        <Stack w='100%' maxW='1200px'>
-          <Text color='white' fontSize='xl'>
-            Actualizado el 15/05
-          </Text>
+          <Stack direction='row' align='center' pb='1em'>
+            <Heading as='h3' fontSize='7em' color='white' fontWeight={500}>
+              $
+            </Heading>
+            <Heading
+              ref={counterRef}
+              as='h3'
+              fontSize='7em'
+              color='white'
+              fontWeight={500}
+            >
+              0
+            </Heading>
+          </Stack>
+          <Tag variant='outline'>Actualizado al 15/05</Tag>
         </Stack>
       </Stack>
     </Stack>

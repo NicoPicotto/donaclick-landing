@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Stack bgColor='naranja' padding='1em' align='center' id='contacto'>
+    <Stack bgColor='azul' padding='1em' align='center'>
       <Stack
         maxW='1200px'
         w='100%'

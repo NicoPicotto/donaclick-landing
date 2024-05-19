@@ -1,6 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource-variable/source-serif-4";
-import "@fontsource/m-plus-rounded-1c";
 
 const colors = {
   negro: "#0e1111",
@@ -12,7 +11,6 @@ const colors = {
 };
 
 const fonts = {
-  body: `'M PLUS Rounded 1c', sans-serif`,
   heading: `'Source Serif 4 Variable', serif`,
 };
 
@@ -63,11 +61,17 @@ const Button = {
 
 const styles = {
   global: {
+    "@font-face": {
+      fontFamily: "GothamRoundedBook",
+      src: "url('/assets/fonts/Gotham-Rounded-Book.otf') format('opentype')",
+      fontStyle: "normal",
+    },
     "html, body": {
       backgroundColor: colors.fondo,
       color: colors.negro,
       fontSize: "16px",
       scrollBehavior: "smooth",
+      fontFamily: "GothamRoundedBook, sans-serif",
     },
   },
 };
