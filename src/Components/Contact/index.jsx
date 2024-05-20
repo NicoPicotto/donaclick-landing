@@ -29,6 +29,7 @@ const Contact = () => {
           pb={10}
           color='azul'
           textDecor='underline'
+          textDecorationThickness={2}
           textUnderlineOffset={4}
           textDecorationColor='naranja'
         >
@@ -43,7 +44,12 @@ const Contact = () => {
           gap={4}
           onSubmit={onSubmit}
         >
-          <Stack direction='row' align='center' w='100%' justify='center'>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            align='center'
+            w='100%'
+            justify='center'
+          >
             <Stack w='100%' gap={0}>
               <FormLabel
                 fontWeight='bold'

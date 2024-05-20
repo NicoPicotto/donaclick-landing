@@ -33,7 +33,6 @@ import "./styles.css";
 
 // import required modules
 import { EffectFade, Navigation, Autoplay } from "swiper/modules";
-import Numeros from "../Numeros";
 
 const Ongs = () => {
   const imageRefs = useRef([]);
@@ -99,6 +98,8 @@ const Ongs = () => {
         zIndex={1}
         opacity={0.05}
         blendMode='difference'
+        alt='Isologo de DonaClick'
+        display={{ base: "none", md: "block" }}
       />
       <Divider
         borderColor='naranja'
@@ -106,9 +107,11 @@ const Ongs = () => {
         w='52%'
         top='13.5em'
         right={0}
+        display={{ base: "none", md: "block" }}
       />
       <Stack
-        paddingTop='10em'
+        paddingTop={{ base: "2em", md: "10em" }}
+        marginBottom={{ base: "5em", md: "0em" }}
         maxW='1200px'
         align='center'
         justify='center'
@@ -116,7 +119,6 @@ const Ongs = () => {
         w='100%'
         position='relative'
       >
-        <Stack position='absolute' top='10em' right='10em'></Stack>
         <Swiper
           effect={"fade"}
           modules={[EffectFade, Navigation, Autoplay]}
@@ -134,27 +136,53 @@ const Ongs = () => {
           {dataOngs.map((ong, index) => (
             <SwiperSlide key={ong.slug}>
               <Stack
-                direction='row'
-                justify='space-between'
+                direction={{ base: "column", md: "row" }}
+                justify={{ base: "center", md: "space-between" }}
                 h='100%'
-                align='flex-start'
+                align={{ base: "center", md: "flex-start" }}
+                gap={{ base: "20px", md: "inherit" }}
               >
                 <Image
                   ref={(el) => (imageRefs.current[index] = el)}
                   src={ong.corazon}
-                  w='400px'
+                  w={{ base: "60%", md: "400px" }}
                   objectFit='contain'
+                  alt={`Imagen de ${ong.label}`}
                 />
-                <Stack w='50%' gap={5}>
-                  <Text color='azul' fontWeight={600} fontSize='4xl'>
-                    {ong.label}
-                  </Text>
+                <Stack w={{ base: "100%", md: "50%" }} gap={5}>
+                  <Stack direction='row' align='center'>
+                    <Stack
+                      borderRadius='full'
+                      bgColor='naranja'
+                      w='40px'
+                      h='40px'
+                      align='center'
+                      justify='center'
+                      display={{ base: "flex", md: "none" }}
+                    >
+                      <Icon
+                        as={iconMap[ong.icon]}
+                        color='blanco'
+                        fontSize='20px'
+                      />
+                    </Stack>
+                    <Text
+                      color='azul'
+                      fontWeight={600}
+                      fontSize={{ base: "2xl", md: "4xl" }}
+                    >
+                      {ong.label}
+                    </Text>
+                  </Stack>
+
                   <Image
                     h='120px'
                     maxW='200px'
                     w='fit-content'
                     objectFit='contain'
+                    alt={`Logo de ${ong.label}`}
                     src={ong.path}
+                    display={{ base: "none", md: "block" }}
                   />
                   <Text color='gris' fontWeight={300} textAlign='justify'>
                     {ong.description}
@@ -200,6 +228,7 @@ const Ongs = () => {
                 bgColor='naranja'
                 right='2em'
                 padding='15px'
+                display={{ base: "none", md: "flex" }}
               >
                 <Icon as={iconMap[ong.icon]} color='blanco' fontSize='45px' />
               </Stack>
@@ -213,9 +242,7 @@ const Ongs = () => {
         w='100%'
         position='absolute'
         bottom='38.5em'
-      >
-        <Image />
-      </Stack>
+      ></Stack>
       <Stack bgColor='azul' w='100%' align='center' pb='2em' id='numeros'>
         <Stack
           maxW='1200px'
@@ -231,13 +258,18 @@ const Ongs = () => {
             </Highlight>
           </Text>
           <Stack direction='row' align='center' pb='1em'>
-            <Heading as='h3' fontSize='7em' color='white' fontWeight={500}>
+            <Heading
+              as='h3'
+              fontSize={{ base: "4em", md: "7em" }}
+              color='white'
+              fontWeight={500}
+            >
               $
             </Heading>
             <Heading
               ref={counterRef}
               as='h3'
-              fontSize='7em'
+              fontSize={{ base: "4em", md: "7em" }}
               color='white'
               fontWeight={500}
             >

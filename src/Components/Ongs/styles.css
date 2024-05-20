@@ -1,8 +1,13 @@
 .mySwiper {
   width: 100%;
-  
 }
 
 .swiper-slide {
   height: 600px;
+}
+
+@media (max-width: 1200px) {
+  .swiper-slide {
+    height: fit-content;
+  }
 }

@@ -25,8 +25,8 @@ const About = () => {
         width: "100%",
         scrollTrigger: {
           trigger: highlightRef.current,
-          start: "top 90%",
-          end: "bottom 50%",
+          start: "top 70%",
+          end: "bottom 30%",
           scrub: 1,
         },
         duration: 1,
@@ -71,6 +71,7 @@ const About = () => {
             as='a'
             href='https://www.todoairelibre.com.ar'
             target='_blank'
+            _hover={{ textDecoration: "none" }}
           >
             www.todoairelibre.com.ar
           </Link>{" "}
@@ -117,16 +118,18 @@ const About = () => {
           position='absolute'
           left='1em'
           bottom='-3em'
-          w='100px'
+          w={{ base: "80px", md: "100px" }}
           zIndex={2}
+          atl='Smiley face'
         />
         <Image
           src='assets/About/iso.png'
           position='absolute'
           right='2em'
           top='-5em'
-          w='100px'
+          w={{ base: "70px", md: "100px" }}
           zIndex={2}
+          atl='Iso logo de DonaClick'
         />
         <Stack
           align='center'
@@ -142,7 +145,7 @@ const About = () => {
             <Image
               src='assets/About/todoairelibre.png'
               w='130px'
-              alt='Todo Aire Libre'
+              alt='Logo Todo Aire Libre'
               pb={4}
             />
           </HStack>
