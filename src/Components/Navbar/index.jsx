@@ -19,9 +19,9 @@ const Navbar = () => {
 
   const MenuButtons = [
     { label: "¿De qué se trata?", link: "#about" },
-    { label: "ONG's Asociadas", link: "#ongs" },
     { label: "Resultados", link: "#numeros" },
-    { label: "Contacto", link: "#contacto" },
+    { label: "ONG's Asociadas", link: "#ongs" },
+    //{ label: "Contacto", link: "#contacto" },
   ];
 
   return (
@@ -41,7 +41,7 @@ const Navbar = () => {
         direction='row'
         w='100%'
       >
-        <Link as="a" href="#hero">
+        <Link as='a' href='#hero'>
           <Image src='/assets/Navbar/logo.png' w='175px' alt='Logo DonaClick' />
         </Link>
 

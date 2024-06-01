@@ -56,28 +56,6 @@ const Ongs = () => {
     });
   };
 
-  const counterRef = useRef(null);
-
-  useGSAP(() => {
-    const counter = { value: 0 };
-    gsap.to(counter, {
-      value: 1502026,
-      duration: 3,
-      ease: "power2.out",
-      onUpdate: () => {
-        counterRef.current.innerHTML = Math.floor(
-          counter.value
-        ).toLocaleString();
-      },
-      scrollTrigger: {
-        trigger: counterRef.current,
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
-
   const iconMap = {
     MdRestaurant: MdRestaurant,
     GiSittingDog: GiSittingDog,
@@ -89,18 +67,6 @@ const Ongs = () => {
 
   return (
     <Stack align='center' position='relative' id='ongs'>
-      <Image
-        src='assets/Ongs/hand-big.png'
-        position='absolute'
-        bottom={-20}
-        left={0}
-        w='50%'
-        zIndex={1}
-        opacity={0.05}
-        blendMode='difference'
-        alt='Isologo de DonaClick'
-        display={{ base: "none", md: "block" }}
-      />
       <Divider
         borderColor='naranja'
         position='absolute'
@@ -145,9 +111,22 @@ const Ongs = () => {
                 <Image
                   ref={(el) => (imageRefs.current[index] = el)}
                   src={ong.corazon}
-                  w={{ base: "60%", md: "400px" }}
+                  w={{ base: "60%", md: "350px" }}
+                  marginLeft="20px"
                   objectFit='contain'
                   alt={`Imagen de ${ong.label}`}
+                />
+                <Image
+                  src='assets/Ongs/hand-big.png'
+                  position='absolute'
+                  bottom={"0px"}
+                  left={"0px"}
+                  h="500px"
+                  zIndex={10}
+                  opacity={0.3}
+                  blendMode='difference'
+                  alt='Isologo de DonaClick'
+                  display={{ base: "none", md: "block" }}
                 />
                 <Stack w={{ base: "100%", md: "50%" }} gap={5}>
                   <Stack direction='row' align='center'>
@@ -171,7 +150,7 @@ const Ongs = () => {
                       fontWeight={600}
                       fontSize={{ base: "2xl", md: "4xl" }}
                     >
-                      {ong.label}
+                      ONGs Asociadas
                     </Text>
                   </Stack>
 
@@ -223,7 +202,7 @@ const Ongs = () => {
               </Stack>
               <Stack
                 position='absolute'
-                bottom={0}
+                bottom={"90px"}
                 borderRadius='full'
                 bgColor='naranja'
                 right='2em'
@@ -237,48 +216,12 @@ const Ongs = () => {
         </Swiper>
       </Stack>
       <Stack
-        h='4em'
+        h='8em'
         bgColor='azul'
         w='100%'
         position='absolute'
-        bottom='38.5em'
+        bottom={0}
       ></Stack>
-      <Stack bgColor='azul' w='100%' align='center' pb='2em' id='numeros'>
-        <Stack
-          maxW='1200px'
-          justify='center'
-          align='center'
-          h='600px'
-          w='100%'
-          position='relative'
-        >
-          <Text color='white' fontSize='2xl' fontWeight='bold'>
-            <Highlight query='donando' styles={{ color: "naranja" }}>
-              Llevamos donando
-            </Highlight>
-          </Text>
-          <Stack direction='row' align='center' pb='1em'>
-            <Heading
-              as='h3'
-              fontSize={{ base: "4em", md: "7em" }}
-              color='white'
-              fontWeight={500}
-            >
-              $
-            </Heading>
-            <Heading
-              ref={counterRef}
-              as='h3'
-              fontSize={{ base: "4em", md: "7em" }}
-              color='white'
-              fontWeight={500}
-            >
-              0
-            </Heading>
-          </Stack>
-          <Tag variant='outline'>Actualizado al 15/05</Tag>
-        </Stack>
-      </Stack>
     </Stack>
   );
 };

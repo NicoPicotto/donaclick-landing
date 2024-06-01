@@ -1,15 +1,15 @@
 import Hero from "../../Components/Hero";
 import About from "../../Components/About";
 import Ongs from "../../Components/Ongs";
-import Contact from "../../Components/Contact";
+import Results from "../../Components/Results";
 
 const index = () => {
   return (
     <>
       <Hero />
       <About />
+      <Results />
       <Ongs />
-      <Contact />
     </>
   );
 };

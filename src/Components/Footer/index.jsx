@@ -49,19 +49,14 @@ const Footer = () => {
               ¿De qué se trata?
             </Text>
           </Button>
-          <Button as='a' href='#ongs' variant='link'>
-            <Text color='blanco' fontWeight='bolder'>
-              ONG&apos;s Asociadas
-            </Text>
-          </Button>
           <Button as='a' href='#numeros' variant='link'>
             <Text color='blanco' fontWeight='bolder'>
               Resultados
             </Text>
           </Button>
-          <Button as='a' href='#contacto' variant='link'>
+          <Button as='a' href='#ongs' variant='link'>
             <Text color='blanco' fontWeight='bolder'>
-              Contacto
+              ONG&apos;s Asociadas
             </Text>
           </Button>
         </Stack>

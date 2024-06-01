@@ -38,7 +38,7 @@ const About = () => {
   });
 
   return (
-    <Stack align='center' paddingInline='1em' id='about'>
+    <Stack align='center' paddingInline='1em' id='about' paddingBottom="10em">
       <Stack
         paddingBlock='10em'
         maxW='1200px'
