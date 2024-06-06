@@ -8,9 +8,6 @@ import {
   Divider,
   Icon,
   IconButton,
-  Heading,
-  Highlight,
-  Tag,
 } from "@chakra-ui/react";
 import dataOngs from "./ongs.json";
 import { MdRestaurant } from "react-icons/md";
@@ -18,7 +15,6 @@ import { GiSittingDog, GiSchoolBag } from "react-icons/gi";
 import { RiSurgicalMaskFill } from "react-icons/ri";
 import { BsCupHotFill } from "react-icons/bs";
 import { FaTruckMedical } from "react-icons/fa6";
-import { useGSAP } from "@gsap/react";
 import { BiLogoInstagramAlt, BiWorld } from "react-icons/bi";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
