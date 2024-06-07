@@ -1,7 +1,7 @@
 import { Stack, AspectRatio, IconButton } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import videoHero from "/assets/Hero/video.mp4";
+import videoHero from "/assets/Hero/video2.mp4";
 import portada from "/assets/Hero/portada.png";
 
 const Hero = () => {
