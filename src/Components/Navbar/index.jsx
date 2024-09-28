@@ -28,7 +28,8 @@ const Navbar = () => {
       <Stack
          bgColor='azul'
          align='center'
-         position='sticky'
+         position={{ base: "sticky", md: "fixed" }}
+         w='100%'
          top={0}
          zIndex={10}
          paddingInline='1em'
@@ -57,6 +58,7 @@ const Navbar = () => {
                      key={item.link}
                      variant='link'
                      fontWeight='bolder'
+                     _focus={{ color: "blanco" }}
                   >
                      {item.label}
                   </Button>
@@ -88,8 +90,11 @@ const Navbar = () => {
                            w='100%'
                            key={item.link}
                            fontSize='1.5em'
+                           as='a'
+                           href={item.link}
                            variant='link'
                            color='blanco'
+                           onClick={onClose}
                            fontWeight='bolder'
                         >
                            {item.label}

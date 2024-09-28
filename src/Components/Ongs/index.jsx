@@ -8,11 +8,13 @@ import {
    Divider,
    Icon,
    IconButton,
+   Button,
 } from "@chakra-ui/react";
 import dataOngs from "./ongs.json";
 import { MdRestaurant } from "react-icons/md";
 import { GiSittingDog, GiSchoolBag } from "react-icons/gi";
 import { RiSurgicalMaskFill } from "react-icons/ri";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { BsCupHotFill } from "react-icons/bs";
 import { FaTruckMedical } from "react-icons/fa6";
 import { BiLogoInstagramAlt, BiWorld } from "react-icons/bi";
@@ -32,6 +34,7 @@ import { EffectFade, Navigation, Autoplay } from "swiper/modules";
 
 const Ongs = () => {
    const imageRefs = useRef([]);
+   const iconsRefs = useRef([]);
 
    const handleSlideChangeStart = (swiper) => {
       const currentIndex = swiper.realIndex;
@@ -41,11 +44,21 @@ const Ongs = () => {
             { rotateY: 0 },
             { rotateY: 360, duration: 1 } // Ajusta la duración según sea necesario
          );
+         gsap.fromTo(
+            iconsRefs.current[currentIndex],
+            { rotateY: 0 },
+            { rotateY: -360, duration: 1 } // Ajusta la duración según sea necesario
+         );
       }
    };
 
    const handleSlideChangeEnd = (swiper) => {
       imageRefs.current.forEach((image) => {
+         if (image) {
+            gsap.set(image, { rotateY: 0 });
+         }
+      });
+      iconsRefs.current.forEach((image) => {
          if (image) {
             gsap.set(image, { rotateY: 0 });
          }
@@ -68,6 +81,7 @@ const Ongs = () => {
             position='absolute'
             w='52%'
             top='13.5em'
+            borderWidth={1}
             right={0}
             display={{ base: "none", md: "block" }}
          />
@@ -77,7 +91,7 @@ const Ongs = () => {
             maxW='1440px'
             align='center'
             justify='center'
-            paddingInline='1em'
+            paddingInline='2em'
             w='100%'
             position='relative'
          >
@@ -86,6 +100,11 @@ const Ongs = () => {
                modules={[EffectFade, Navigation, Autoplay]}
                className='mySwiper'
                draggable={false}
+               navigation={{
+                  // Habilitar navegación
+                  nextEl: ".custom-swiper-button-next",
+                  prevEl: ".custom-swiper-button-prev",
+               }}
                fadeEffect={{ crossFade: true }}
                loop={true}
                autoplay={{
@@ -112,14 +131,30 @@ const Ongs = () => {
                            objectFit='contain'
                            alt={`Imagen de ${ong.label}`}
                         />
+                        <Stack
+                           position='absolute'
+                           borderRadius='full'
+                           bgColor='naranja'
+                           left='0.75em'
+                           padding='15px'
+                           zIndex={100}
+                           ref={(el) => (iconsRefs.current[index] = el)}
+                           display={{ base: "none", md: "flex" }}
+                        >
+                           <Icon
+                              as={iconMap[ong.icon]}
+                              color='blanco'
+                              fontSize='30px'
+                           />
+                        </Stack>
                         <Image
                            src='assets/Ongs/hand-big.png'
                            position='absolute'
-                           bottom={"0px"}
+                           bottom='-12rem'
                            left={"0px"}
                            h='500px'
                            zIndex={10}
-                           opacity={0.3}
+                           opacity={0.5}
                            blendMode='difference'
                            alt='Isologo de DonaClick'
                            display={{ base: "none", md: "block" }}
@@ -141,13 +176,35 @@ const Ongs = () => {
                                     fontSize='20px'
                                  />
                               </Stack>
+
                               <Text
                                  color='azul'
                                  fontWeight={600}
+                                 mr='0.5rem'
                                  fontSize={{ base: "2xl", md: "4xl" }}
                               >
                                  ONGs Asociadas
                               </Text>
+                              <IconButton
+                                 className='custom-swiper-button-prev'
+                                 aria-label='Previous'
+                                 icon={<FaAngleLeft />}
+                                 color='azul'
+                                 size='sm'
+                                 variant='ghost'
+                                 outline='1px solid #2E3192'
+                                 _hover={{ bgColor: "azul", color: "blanco" }}
+                              />
+                              <IconButton
+                                 className='custom-swiper-button-next'
+                                 aria-label='Next'
+                                 icon={<FaAngleRight />}
+                                 color='azul'
+                                 size='sm'
+                                 variant='ghost'
+                                 outline='1px solid #2E3192'
+                                 _hover={{ bgColor: "azul", color: "blanco" }}
+                              />
                            </Stack>
 
                            <Image
@@ -203,35 +260,29 @@ const Ongs = () => {
                                     color='naranja'
                                  />
                               )}
+                              <Button
+                                 paddingBlock={0}
+                                 border='1.7px solid #FF7E00'
+                                 size='sm'
+                                 as='a'
+                                 href={ong.url}
+                                 target='_blank'
+                                 bgColor='blanco'
+                                 _hover={{
+                                    color: "blanco",
+                                    bgColor: "naranja",
+                                 }}
+                                 color='naranja'
+                              >
+                                 Comprá y doná a esta ONG
+                              </Button>
                            </Stack>
                         </Stack>
-                     </Stack>
-                     <Stack
-                        position='absolute'
-                        bottom={"90px"}
-                        borderRadius='full'
-                        bgColor='naranja'
-                        right='2em'
-                        padding='15px'
-                        display={{ base: "none", md: "flex" }}
-                     >
-                        <Icon
-                           as={iconMap[ong.icon]}
-                           color='blanco'
-                           fontSize='45px'
-                        />
                      </Stack>
                   </SwiperSlide>
                ))}
             </Swiper>
          </Stack>
-         <Stack
-            h='8em'
-            bgColor='azul'
-            w='100%'
-            position='absolute'
-            bottom={0}
-         ></Stack>
       </Stack>
    );
 };

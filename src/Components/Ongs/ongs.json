@@ -1,67 +1,84 @@
 [
-  {
-    "path": "assets/Ongs/haciendo-camino.png",
-    "label": "Haciendo Camino",
-    "icon": "BsCupHotFill",
-    "web": "https://haciendocamino.org.ar/",
-    "ig": "https://instagram.com/haciendocamino",
-    "corazon": "assets/Ongs/cora-haciendo.png",
-    "slug": "haciendo-camino",
-    "description": "Desde 2006 la fundación Haciendo Camino trabaja para mejorar la calidad de vida de familias de vulnerabilidad social en el norte argentino, disponen de programas que están dirigidos fundamentalmente para promover el crecimiento y desarrollo integral de niños y niñas de 0 a 5 años, acompañando y capacitando a madres desde el embarazo."
-  },
-  {
-    "path": "assets/Ongs/rotary-logo.png",
-    "label": "Rotary Club Rio Cuarto Sur",
-    "icon": "GiSchoolBag",
-    "ig": "https://instagram.com/rcderiocuartosur",
-    "corazon": "assets/Ongs/cora-rotary.png",
-    "slug": "rotary-club-rio-cuarto",
-    "description": "Desde hace más de una década, el club rotary de la ciudad de Río Cuarto une a amigos, vecinos y compatriotas con el fin de ayudar al próximo. Actualmente cuentan con diversos programas de ayuda. Los más destacadas son programa de inserción laboral para miembros de la cárceles, brindando maquinarias y capacitación en busca de enseñar oficios becas secundarias y universitarias ligadas a el rendimiento de los beneficiarios inclusión en los programas nacionales e internacionales de Rotary Argentina y Rotary Internacional, siendo el más destacado su búsqueda de eliminación de la Polio en el mundo."
-  },
-  {
-    "path": "assets/Ongs/juntando-logo.png",
-    "label": "Juntando Sonrisas",
-    "icon": "MdRestaurant",
-    "ig": "https://instagram.com/juntandosonrisasong",
-    "corazon": "assets/Ongs/cora-juntando.png",
-    "slug": "juntando-sonrisas",
-    "description": "Desde el 2018 Juntando Sonrisas se ocupa de brindar soporte alimenticio, educacional y laboral a individuos con situaciones adversas en la provincia de Córdoba desde hace cinco años JuntandoSonrisas mantiene su compromiso fundamental “Ayudar a igualar las oportunidades de los Argentinos sin importar en qué situación nace”"
-  },
-  {
-    "path": "assets/Ongs/donde-quiero-logo.png",
-    "label": "Donde Quiero Estar",
-    "icon": "RiSurgicalMaskFill",
-    "corazon": "assets/Ongs/cora-donde.png",
-    "web": "https://dondequieroestar.org/",
-    "ig": "https://instagram.com/dondequieroestar",
-    "slug": "donde-quiero-estar",
-    "description": "Impulsados por su fundadora Vicky, dondequieroestar brinda soporte desde el año 2006 a Argentinos que se enfrentan al cáncer. Sus comienzos fueron en el hospital de clínicas “Jose de San Martin” brindando apoyo a familiares mediante talleres de gimnasia localizada, fotografía, reflexología y pintura. Actualmente DondeQuieroEstar se encuentra en más de 20 hospitales de todo el país con diversos programas para pacientes de cáncer y familiares. Destacándose el lanzamiento de www.mundocancer.org, web dedicada a brindar información sobre la enfermedad."
-  },
-  {
-    "path": "assets/Ongs/manos-logo.png",
-    "label": "Manos Por Patas",
-    "icon": "GiSittingDog",
-    "ig": "https://instagram.com/manosxpatas1",
-    "corazon": "assets/Ongs/cora-manos.png",
-    "slug": "manos-por-patas",
-    "description": "Desde el 2017 ManosporPatas se ocupa de ayudar a perros en la calle de todas las maneras posibles, con techo, comida, planes de adopción y todos los tratamientos veterinarios que puedan precisar para que tengan una calidad de vida digna. Actualmente cuenta con instalaciones para más de 50 perros y convenios con distintos veterinarios para trabajos de castración y cuidado de las mascotas."
-  },
-  {
-    "path": "assets/Ongs/volando-logo.png",
-    "label": "VolandoAlto",
-    "icon": "GiSchoolBag",
-    "corazon": "assets/Ongs/cora-volando.png",
-    "ig": "https://instagram.com/volandoalto.ong",
-    "slug": "volando-alto",
-    "description": "Somos una asociación civil que creemos en la educación como herramienta fundamental para la transformación social. Nuestra misión consiste en construir oportunidades a través de la educación, para que cada uno pueda ser autor de su promoción humana. Generamos espacios de aprendizajes, donde niños, jóvenes y adultos puedan adquirir las herramientas necesarias para la construcción de una vida digna, superandose dia a dia, a través de talleres de alfabetizacion, alfabetizacion digital y talleres de oficios y de formación para adultos."
-  },
-  {
-    "path": "assets/Ongs/soles-logo.png",
-    "label": "Fundación Soles",
-    "icon": "FaTruckMedical",
-    "ig": "https://instagram.com/soles.ong",
-    "corazon": "assets/Ongs/cora-soles.png",
-    "slug": "fundacion-soles",
-    "description": "Somos voluntarios en apoyo a los niños y niñas con cancer y su familia. Trabajamos en contenciones economica y emocional para todo el nucleo familiar durante el tratamiento."
-  }
+   {
+      "path": "assets/Ongs/haciendo-camino.png",
+      "label": "Haciendo Camino",
+      "icon": "BsCupHotFill",
+      "web": "https://haciendocamino.org.ar/",
+      "ig": "https://instagram.com/haciendocamino",
+      "corazon": "assets/Ongs/cora-haciendo.png",
+      "slug": "haciendo-camino",
+      "url": "https://todoairelibre.com.ar/?ong=Haciendo%20Camino",
+      "description": "Desde 2006 la fundación Haciendo Camino trabaja para mejorar la calidad de vida de familias de vulnerabilidad social en el norte argentino, disponen de programas que están dirigidos fundamentalmente para promover el crecimiento y desarrollo integral de niños y niñas de 0 a 5 años, acompañando y capacitando a madres desde el embarazo."
+   },
+   {
+      "path": "assets/Ongs/rotary-logo.png",
+      "label": "Rotary Club Rio Cuarto Sur",
+      "icon": "GiSchoolBag",
+      "ig": "https://instagram.com/rcderiocuartosur",
+      "corazon": "assets/Ongs/cora-rotary.png",
+      "slug": "rotary-club-rio-cuarto",
+      "url": "https://todoairelibre.com.ar/?ong=Rotary%20Club%20R%C3%ADo%20Cuarto",
+      "description": "Desde hace más de una década, el club rotary de la ciudad de Río Cuarto une a amigos, vecinos y compatriotas con el fin de ayudar al próximo. Actualmente cuentan con diversos programas de ayuda. Los más destacadas son programa de inserción laboral para miembros de la cárceles, brindando maquinarias y capacitación en busca de enseñar oficios becas secundarias y universitarias ligadas a el rendimiento de los beneficiarios inclusión en los programas nacionales e internacionales de Rotary Argentina y Rotary Internacional, siendo el más destacado su búsqueda de eliminación de la Polio en el mundo."
+   },
+   {
+      "path": "assets/Ongs/juntando-logo.png",
+      "label": "Juntando Sonrisas",
+      "icon": "MdRestaurant",
+      "ig": "https://instagram.com/juntandosonrisasong",
+      "corazon": "assets/Ongs/cora-juntando.png",
+      "slug": "juntando-sonrisas",
+      "url": "https://todoairelibre.com.ar/?ong=Juntando%20Sonrisas",
+      "description": "Desde el 2018 Juntando Sonrisas se ocupa de brindar soporte alimenticio, educacional y laboral a individuos con situaciones adversas en la provincia de Córdoba desde hace cinco años JuntandoSonrisas mantiene su compromiso fundamental “Ayudar a igualar las oportunidades de los Argentinos sin importar en qué situación nace”"
+   },
+   {
+      "path": "assets/Ongs/donde-quiero-logo.png",
+      "label": "Donde Quiero Estar",
+      "icon": "RiSurgicalMaskFill",
+      "corazon": "assets/Ongs/cora-donde.png",
+      "web": "https://dondequieroestar.org/",
+      "ig": "https://instagram.com/dondequieroestar",
+      "slug": "donde-quiero-estar",
+      "url": "https://todoairelibre.com.ar/?ong=Fundaci%C3%B3n%20Donde%20Quiero%20Estar",
+      "description": "Impulsados por su fundadora Vicky, dondequieroestar brinda soporte desde el año 2006 a Argentinos que se enfrentan al cáncer. Sus comienzos fueron en el hospital de clínicas “Jose de San Martin” brindando apoyo a familiares mediante talleres de gimnasia localizada, fotografía, reflexología y pintura. Actualmente DondeQuieroEstar se encuentra en más de 20 hospitales de todo el país con diversos programas para pacientes de cáncer y familiares. Destacándose el lanzamiento de www.mundocancer.org, web dedicada a brindar información sobre la enfermedad."
+   },
+   {
+      "path": "assets/Ongs/manos-logo.png",
+      "label": "Manos Por Patas",
+      "icon": "GiSittingDog",
+      "ig": "https://instagram.com/manosxpatas1",
+      "corazon": "assets/Ongs/cora-manos.png",
+      "slug": "manos-por-patas",
+      "url": "https://todoairelibre.com.ar/?ong=ManosporPatas",
+      "description": "Desde el 2017 ManosporPatas se ocupa de ayudar a perros en la calle de todas las maneras posibles, con techo, comida, planes de adopción y todos los tratamientos veterinarios que puedan precisar para que tengan una calidad de vida digna. Actualmente cuenta con instalaciones para más de 50 perros y convenios con distintos veterinarios para trabajos de castración y cuidado de las mascotas."
+   },
+   {
+      "path": "assets/Ongs/volando-logo.png",
+      "label": "VolandoAlto",
+      "icon": "GiSchoolBag",
+      "corazon": "assets/Ongs/cora-volando.png",
+      "ig": "https://instagram.com/volandoalto.ong",
+      "slug": "volando-alto",
+      "url": "https://todoairelibre.com.ar/?ong=VolandoAlto",
+      "description": "Somos una asociación civil que creemos en la educación como herramienta fundamental para la transformación social. Nuestra misión consiste en construir oportunidades a través de la educación, para que cada uno pueda ser autor de su promoción humana. Generamos espacios de aprendizajes, donde niños, jóvenes y adultos puedan adquirir las herramientas necesarias para la construcción de una vida digna, superandose dia a dia, a través de talleres de alfabetizacion, alfabetizacion digital y talleres de oficios y de formación para adultos."
+   },
+   {
+      "path": "assets/Ongs/soles-logo.png",
+      "label": "Fundación Soles",
+      "icon": "FaTruckMedical",
+      "ig": "https://instagram.com/soles.ong",
+      "corazon": "assets/Ongs/cora-soles.png",
+      "slug": "fundacion-soles",
+      "url": "https://todoairelibre.com.ar/?ong=Fundacion%20Soles",
+      "description": "Somos voluntarios en apoyo a los niños y niñas con cancer y su familia. Trabajamos en contenciones economica y emocional para todo el nucleo familiar durante el tratamiento."
+   },
+   {
+      "path": "assets/Ongs/banco-logo.png",
+      "label": "Banco de Alimentos Buenos Aires",
+      "icon": "MdRestaurant",
+      "ig": "https://www.instagram.com/bdalimentos/",
+      "corazon": "assets/Ongs/cora-banco.png",
+      "slug": "banco-de-alimentos",
+      "url": "https://todoairelibre.com.ar/?ong=Banco%20de%20Alimentos",
+      "description": "Desde el año 2000 el Banco de Alimentos de Buenos Aires, trabaja para reducir el hambre, mejorar la nutrición y evitar el desperdicio de alimentos. Actualmente colaboran con la alimentación de más de 350.000 personas por día a través de 1.091 organizaciones sociales y comedores que dan de comer a personas que lo necesitan."
+   }
 ]

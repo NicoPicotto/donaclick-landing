@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <Stack id='hero' position='relative'>
+    <Stack id='hero' position='relative' h="100dvh">
       <AspectRatio ratio={16 / 9}>
         <video
           ref={videoRef}
@@ -27,7 +27,7 @@ const Hero = () => {
           loop={false}
           playsInline
           poster={portada}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: "100%", height: "100dvh", objectFit: "cover" }}
         />
       </AspectRatio>
       <IconButton

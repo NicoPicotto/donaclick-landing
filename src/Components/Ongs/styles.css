@@ -1,13 +1,18 @@
 .mySwiper {
-  width: 100%;
+   width: 100%;
 }
 
 .swiper-slide {
-  height: 800px;
+   height: 600px;
 }
 
 @media (max-width: 1200px) {
-  .swiper-slide {
-    height: fit-content;
-  }
+   .swiper-slide {
+      height: fit-content;
+   }
+}
+
+.swiper-button-next:not(.custom-swiper-button-next),
+.swiper-button-prev:not(.custom-swiper-button-prev) {
+   display: none !important;
 }
