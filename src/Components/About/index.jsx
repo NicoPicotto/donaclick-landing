@@ -8,6 +8,7 @@ import {
    HStack,
    Box,
    Button,
+   useMediaQuery,
 } from "@chakra-ui/react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
    const highlightRef = useRef(null);
+   const [isMobile] = useMediaQuery("(max-width: 1100px)");
 
    useGSAP(() => {
       gsap.fromTo(
@@ -40,7 +42,8 @@ const About = () => {
    return (
       <Stack align='center' paddingInline='2em' id='about' paddingBottom='10em'>
          <Stack
-            paddingBlock='10em'
+            paddingTop={isMobile ? "4rem" : "8rem"}
+            paddingBottom='6rem'
             maxW='1440px'
             align='center'
             justify='center'
@@ -48,7 +51,7 @@ const About = () => {
          >
             <Heading
                as='h2'
-               size='xl'
+               size={isMobile ? "sm" : "xl"}
                textAlign='center'
                fontFamily='GothamRoundedBook'
                fontWeight={400}
@@ -62,8 +65,8 @@ const About = () => {
                   as='span'
                   bgColor='naranja'
                   color='blanco'
-                  paddingInline='10px'
-                  paddingBlock='5px'
+                  paddingInline={{ base: "5px", md: "10px" }}
+                  paddingBlock={{ base: "3px", md: "5px" }}
                   borderRadius={20}
                >
                   3%
@@ -105,14 +108,14 @@ const About = () => {
             maxW='1440px'
             position='relative'
             w='100%'
-            marginBottom='5em'
+            marginBottom={isMobile ? "0" : "5rem"}
             bgImage="url('assets/About/about-pic-2.png')"
             bgPosition='center'
             bgSize='cover'
             bgRepeat='no-repeat'
             borderRadius='60px'
             textAlign='center'
-            h='600px'
+            h={isMobile ? "350px" : "600px"}
          >
             <Stack
                position='absolute'
@@ -159,7 +162,12 @@ const About = () => {
                      pb={4}
                   />
                </HStack>
-               <Heading as='h3' size='4xl' color='white' mb='15px'>
+               <Heading
+                  as='h3'
+                  size={isMobile ? "md" : "4xl"}
+                  color='white'
+                  mb='15px'
+               >
                   CLICKEÁ CON IMPACTO
                </Heading>
                <Link

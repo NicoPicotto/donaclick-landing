@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { useRef } from "react";
-import { Stack, Text, Heading, Highlight, Tag } from "@chakra-ui/react";
+import { Stack, Text, Heading, Highlight, Tag, useMediaQuery } from "@chakra-ui/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Results = () => {
    const counterRef = useRef(null);
+   const [isMobile] = useMediaQuery("(max-width: 1100px)");
 
    useGSAP(() => {
       const counter = { value: 0 };
@@ -35,6 +36,7 @@ const Results = () => {
          w='100%'
          align='center'
          pb='2em'
+         paddingBlock={isMobile && "5rem"}
          id='numeros'
          bgImage="url('assets/Results/hand.svg')"
          bgSize='6rem'
@@ -43,7 +45,7 @@ const Results = () => {
             maxW='1440px'
             justify='center'
             align='center'
-            h='100vh'
+            h={isMobile ? "100%" : "100dvh"}
             w='100%'
             position='relative'
          >

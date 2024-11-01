@@ -11,11 +11,13 @@ import {
    IconButton,
    HStack,
    Link,
+   useMediaQuery
 } from "@chakra-ui/react";
 import { RiMenu3Line } from "react-icons/ri";
 
 const Navbar = () => {
    const { isOpen, onOpen, onClose } = useDisclosure();
+   const [isMobile] = useMediaQuery("(max-width: 1100px)");
 
    const MenuButtons = [
       { label: "¿De qué se trata?", link: "#about" },
@@ -28,7 +30,7 @@ const Navbar = () => {
       <Stack
          bgColor='azul'
          align='center'
-         position={{ base: "sticky", md: "fixed" }}
+         position="fixed"
          w='100%'
          top={0}
          zIndex={10}

@@ -9,6 +9,7 @@ import {
    Icon,
    IconButton,
    Button,
+   useMediaQuery,
 } from "@chakra-ui/react";
 import dataOngs from "./ongs.json";
 import { MdRestaurant } from "react-icons/md";
@@ -35,6 +36,7 @@ import { EffectFade, Navigation, Autoplay } from "swiper/modules";
 const Ongs = () => {
    const imageRefs = useRef([]);
    const iconsRefs = useRef([]);
+   const [isMobile] = useMediaQuery("(max-width: 1100px)");
 
    const handleSlideChangeStart = (swiper) => {
       const currentIndex = swiper.realIndex;
@@ -86,8 +88,8 @@ const Ongs = () => {
             display={{ base: "none", md: "block" }}
          />
          <Stack
-            paddingTop={{ base: "2em", md: "10em" }}
-            marginBottom={{ base: "5em", md: "0em" }}
+            paddingTop={isMobile ? "2em" : "10em"}
+            marginBottom={isMobile ? "5em" : "0em"}
             maxW='1440px'
             align='center'
             justify='center'
@@ -126,8 +128,8 @@ const Ongs = () => {
                         <Image
                            ref={(el) => (imageRefs.current[index] = el)}
                            src={ong.corazon}
-                           w={{ base: "60%", md: "350px" }}
-                           marginLeft='20px'
+                           w={{ base: "100%", md: "350px" }}
+                           marginLeft={isMobile ? 0 : "20px"}
                            objectFit='contain'
                            alt={`Imagen de ${ong.label}`}
                         />
@@ -160,7 +162,11 @@ const Ongs = () => {
                            display={{ base: "none", md: "block" }}
                         />
                         <Stack w={{ base: "100%", md: "50%" }} gap={5}>
-                           <Stack direction='row' align='center'>
+                           <Stack
+                              direction={isMobile ? "column" : "row"}
+                              align={isMobile ? "flex-start" : "center"}
+                              gap={isMobile && 5}
+                           >
                               <Stack
                                  borderRadius='full'
                                  bgColor='naranja'
@@ -174,6 +180,7 @@ const Ongs = () => {
                                     as={iconMap[ong.icon]}
                                     color='blanco'
                                     fontSize='20px'
+                                    aspectRatio={1}
                                  />
                               </Stack>
 
@@ -181,30 +188,39 @@ const Ongs = () => {
                                  color='azul'
                                  fontWeight={600}
                                  mr='0.5rem'
-                                 fontSize={{ base: "2xl", md: "4xl" }}
+                                 lineHeight={isMobile ? "1.2" : "1.4"}
+                                 fontSize={isMobile ? "xl" : "4xl"}
                               >
-                                 ONGs Asociadas
+                                 {isMobile ? ong.label : "ONGs Asociadas"}
                               </Text>
-                              <IconButton
-                                 className='custom-swiper-button-prev'
-                                 aria-label='Previous'
-                                 icon={<FaAngleLeft />}
-                                 color='azul'
-                                 size='sm'
-                                 variant='ghost'
-                                 outline='1px solid #2E3192'
-                                 _hover={{ bgColor: "azul", color: "blanco" }}
-                              />
-                              <IconButton
-                                 className='custom-swiper-button-next'
-                                 aria-label='Next'
-                                 icon={<FaAngleRight />}
-                                 color='azul'
-                                 size='sm'
-                                 variant='ghost'
-                                 outline='1px solid #2E3192'
-                                 _hover={{ bgColor: "azul", color: "blanco" }}
-                              />
+                              <Stack direction='row'>
+                                 <IconButton
+                                    className='custom-swiper-button-prev'
+                                    aria-label='Previous'
+                                    icon={<FaAngleLeft />}
+                                    color='azul'
+                                    size='sm'
+                                    variant='ghost'
+                                    outline='1px solid #2E3192'
+                                    _hover={{
+                                       bgColor: "azul",
+                                       color: "blanco",
+                                    }}
+                                 />
+                                 <IconButton
+                                    className='custom-swiper-button-next'
+                                    aria-label='Next'
+                                    icon={<FaAngleRight />}
+                                    color='azul'
+                                    size='sm'
+                                    variant='ghost'
+                                    outline='1px solid #2E3192'
+                                    _hover={{
+                                       bgColor: "azul",
+                                       color: "blanco",
+                                    }}
+                                 />
+                              </Stack>
                            </Stack>
 
                            <Image
