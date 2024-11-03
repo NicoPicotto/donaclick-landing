@@ -80,5 +80,16 @@
       "slug": "banco-de-alimentos",
       "url": "https://todoairelibre.com.ar/?ong=Banco%20de%20Alimentos",
       "description": "Desde el año 2000 el Banco de Alimentos de Buenos Aires, trabaja para reducir el hambre, mejorar la nutrición y evitar el desperdicio de alimentos. Actualmente colaboran con la alimentación de más de 350.000 personas por día a través de 1.091 organizaciones sociales y comedores que dan de comer a personas que lo necesitan."
+   },
+   {
+      "path": "assets/Ongs/zoomar-logo.png",
+      "label": "Vamos a Zoomar",
+      "web": "https://vamosazoomar.org/",
+      "icon": "GiSchoolBag",
+      "ig": "https://www.instagram.com/vamosazoomar/",
+      "corazon": "assets/Ongs/cora-zoomar.png",
+      "slug": "vamos-a-zoomar",
+      "url": "https://todoairelibre.com.ar/?ong=Vamos%20a%20Zoomar",
+      "description": "Vamos a Zoomar es una fundación que nace en el NEA con el objetivo de ampliar el acceso a mujeres al rubro de la contrucción a través de capacitaciones de oficios y la generación de redes en pos de la inclusion laboral femenina."
    }
 ]
