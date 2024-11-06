@@ -11,7 +11,7 @@ import {
    IconButton,
    HStack,
    Link,
-   useMediaQuery
+   useMediaQuery,
 } from "@chakra-ui/react";
 import { RiMenu3Line } from "react-icons/ri";
 
@@ -30,7 +30,7 @@ const Navbar = () => {
       <Stack
          bgColor='azul'
          align='center'
-         position="fixed"
+         position='fixed'
          w='100%'
          top={0}
          zIndex={10}
@@ -47,7 +47,7 @@ const Navbar = () => {
             <Link as='a' href='#hero'>
                <Image
                   src='/assets/Navbar/logo.png'
-                  w='175px'
+                  w={isMobile ? "120px" : "175px"}
                   alt='Logo DonaClick'
                />
             </Link>

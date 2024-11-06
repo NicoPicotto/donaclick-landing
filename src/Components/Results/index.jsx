@@ -13,7 +13,7 @@ const Results = () => {
    useGSAP(() => {
       const counter = { value: 0 };
       gsap.to(counter, {
-         value: 3893406,
+         value: 4789257,
          duration: 3,
          ease: "power2.out",
          onUpdate: () => {
@@ -48,8 +48,9 @@ const Results = () => {
             h={isMobile ? "100%" : "100dvh"}
             w='100%'
             position='relative'
+            gap={isMobile && 0}
          >
-            <Text color='white' fontSize='2xl' fontWeight='bold'>
+            <Text color='white' fontSize='2xl' fontWeight='bold' lineHeight={isMobile && 1}>
                <Highlight query='donando' styles={{ color: "naranja" }}>
                   Llevamos donando
                </Highlight>
@@ -73,7 +74,7 @@ const Results = () => {
                   0
                </Heading>
             </Stack>
-            <Tag variant='outline'>Actualizado al 15/08</Tag>
+            <Tag variant='outline'>Actualizado al 01/11</Tag>
          </Stack>
       </Stack>
    );

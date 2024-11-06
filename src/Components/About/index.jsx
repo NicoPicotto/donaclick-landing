@@ -152,19 +152,20 @@ const About = () => {
                justify='center'
             >
                <HStack spacing={1} align='center' position='absolute' top={10}>
-                  <Text color='white' fontSize='lg' fontWeight='bold'>
+                  <Text color='white' fontSize={isMobile ? "sm" : "lg"} fontWeight='bold'>
                      Un proyecto de
                   </Text>
                   <Image
                      src='assets/About/todoairelibre.png'
-                     w='130px'
+                     w={isMobile ? "100px" : "130px"}
                      alt='Logo Todo Aire Libre'
                      pb={4}
                   />
                </HStack>
                <Heading
                   as='h3'
-                  size={isMobile ? "md" : "4xl"}
+                  size={isMobile ? "2xl" : "4xl"}
+                  lineHeight={1}
                   color='white'
                   mb='15px'
                >
@@ -175,7 +176,7 @@ const About = () => {
                   href='https://www.todoairelibre.com.ar'
                   target='_blank'
                >
-                  <Button fontWeight='bolder' size='lg' variant='outline'>
+                  <Button fontWeight='bolder' size={isMobile ? "md" : "lg"} variant='outline'>
                      COMPRÁ Y DONÁ
                   </Button>
                </Link>
