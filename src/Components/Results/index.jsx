@@ -13,7 +13,7 @@ const Results = () => {
    useGSAP(() => {
       const counter = { value: 0 };
       gsap.to(counter, {
-         value: 4789257,
+         value: 5391114,
          duration: 3,
          ease: "power2.out",
          onUpdate: () => {
@@ -74,7 +74,7 @@ const Results = () => {
                   0
                </Heading>
             </Stack>
-            <Tag variant='outline'>Actualizado al 01/11</Tag>
+            <Tag variant='outline'>Actualizado al 01/02</Tag>
          </Stack>
       </Stack>
    );
