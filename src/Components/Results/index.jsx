@@ -1,6 +1,13 @@
 // Import Swiper React components
 import { useRef } from "react";
-import { Stack, Text, Heading, Highlight, Tag, useMediaQuery } from "@chakra-ui/react";
+import {
+   Stack,
+   Text,
+   Heading,
+   Highlight,
+   Tag,
+   useMediaQuery,
+} from "@chakra-ui/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +20,7 @@ const Results = () => {
    useGSAP(() => {
       const counter = { value: 0 };
       gsap.to(counter, {
-         value: 5391114,
+         value: 6552850,
          duration: 3,
          ease: "power2.out",
          onUpdate: () => {
@@ -32,49 +39,54 @@ const Results = () => {
 
    return (
       <Stack
-         bgColor='azul'
-         w='100%'
-         align='center'
-         pb='2em'
+         bgColor="azul"
+         w="100%"
+         align="center"
+         pb="2em"
          paddingBlock={isMobile && "5rem"}
-         id='numeros'
+         id="numeros"
          bgImage="url('assets/Results/hand.svg')"
-         bgSize='6rem'
+         bgSize="6rem"
       >
          <Stack
-            maxW='1440px'
-            justify='center'
-            align='center'
+            maxW="1440px"
+            justify="center"
+            align="center"
             h={isMobile ? "100%" : "100dvh"}
-            w='100%'
-            position='relative'
+            w="100%"
+            position="relative"
             gap={isMobile && 0}
          >
-            <Text color='white' fontSize='2xl' fontWeight='bold' lineHeight={isMobile && 1}>
-               <Highlight query='donando' styles={{ color: "naranja" }}>
+            <Text
+               color="white"
+               fontSize="2xl"
+               fontWeight="bold"
+               lineHeight={isMobile && 1}
+            >
+               <Highlight query="donando" styles={{ color: "naranja" }}>
                   Llevamos donando
                </Highlight>
             </Text>
-            <Stack direction='row' align='center' pb='1em'>
+            <Stack direction="row" align="center" pb="1em">
                <Heading
-                  as='h3'
+                  as="h3"
                   fontSize={{ base: "4em", md: "7em" }}
-                  color='white'
+                  color="white"
                   fontWeight={500}
                >
                   $
                </Heading>
                <Heading
                   ref={counterRef}
-                  as='h3'
+                  as="h3"
                   fontSize={{ base: "4em", md: "7em" }}
-                  color='white'
+                  color="white"
                   fontWeight={500}
                >
                   0
                </Heading>
             </Stack>
-            <Tag variant='outline'>Actualizado al 01/02</Tag>
+            <Tag variant="outline">Actualizado al 01/05</Tag>
          </Stack>
       </Stack>
    );
